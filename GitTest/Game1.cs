@@ -8,6 +8,7 @@ namespace GitTest
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Texture2D _testImage;
 
         public Game1()
         {
@@ -27,6 +28,8 @@ namespace GitTest
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            _testImage = Content.Load<Texture2D>("ItchCover");
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -43,6 +46,10 @@ namespace GitTest
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Orange);
+
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(_testImage, Vector2.Zero, Color.White);
+            _spriteBatch.End();
 
             // TODO: Add your drawing code here
 
