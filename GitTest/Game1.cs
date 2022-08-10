@@ -42,7 +42,7 @@ namespace GitTest
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Red);
+            GraphicsDevice.Clear(Color.Orange);
 
             // TODO: Add your drawing code here
 
