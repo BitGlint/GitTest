@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace GitTest
 {
@@ -9,6 +10,8 @@ namespace GitTest
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Texture2D _testImage;
+        private float _posX = 0;
+        private Random _random = new Random();
 
         public Game1()
         {
@@ -20,6 +23,8 @@ namespace GitTest
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            Window.Position = new Point(-1500, 0);
 
             base.Initialize();
         }
@@ -40,6 +45,8 @@ namespace GitTest
 
             // TODO: Add your update logic here
 
+            _posX += 0.1f;
+
             base.Update(gameTime);
         }
 
@@ -48,7 +55,7 @@ namespace GitTest
             GraphicsDevice.Clear(Color.Orange);
 
             _spriteBatch.Begin();
-            _spriteBatch.Draw(_testImage, Vector2.Zero, Color.White);
+            _spriteBatch.Draw(_testImage, new Vector2(85 + (float)(Math.Sin((double)_posX) * 25), (float)(Math.Cos((double)_posX) * 5)), Color.White);
             _spriteBatch.End();
 
             // TODO: Add your drawing code here
