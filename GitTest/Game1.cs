@@ -24,7 +24,7 @@ namespace GitTest
         {
             // TODO: Add your initialization logic here
 
-            Window.Position = new Point(-1500, 0);
+            //Window.Position = new Point(-0, 0);
 
             base.Initialize();
         }
@@ -55,7 +55,7 @@ namespace GitTest
             GraphicsDevice.Clear(Color.Orange);
 
             _spriteBatch.Begin();
-            _spriteBatch.Draw(_testImage, new Vector2(85 + (float)(Math.Sin((double)_posX) * 25), (float)(Math.Cos((double)_posX) * 5)), Color.White);
+            _spriteBatch.Draw(_testImage, new Vector2(85 + (float)(Math.Sin((double)_posX) * 25), (float)(Math.Cos((double)_posX) * 15)), Color.White);
             _spriteBatch.End();
 
             // TODO: Add your drawing code here
